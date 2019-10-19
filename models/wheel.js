@@ -1,10 +1,11 @@
 const mongoose = require('./connection.js')
 
 const WheelSchema = new mongoose.Schema({
-  chores: String,
-  people: String,
+  title: String,
   description: String,
   dateCreated: { type: Date, default: Date.now },
+  chores: String,
+  people: String,
   choreId: mongoose.ObjectId,
   personId: mongoose.ObjectId
 })
@@ -23,12 +24,12 @@ const createWheel = (newWheel) => {
 
 //update
 const updateWheel = (id, newWheel) => {
-  return WheelCollection.updateOne(id, newWheel)
+  return WheelCollection.updateOne({ _id: id }, newWheel)
 }
 
 //delete
 const deleteWheel = (id) => {
-  return WheelCollection.deleteOne(id)
+  return WheelCollection.deleteOne({ _id: id })
 }
 
 //get one

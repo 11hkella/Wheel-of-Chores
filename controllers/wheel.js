@@ -1,51 +1,44 @@
-/* Step 1 import express
- *
- */
 const express = require('express')
 
-/* Step 2
- *
- * Import the api files from the models
- *
- * TODO: change the file path to the models file you'll need to use.
- * TODO: rename this from `templateApi` to something more sensible (e.g:
- * `shopsAPI`)
- *
- * NOTE: You may need to import more than one API to create the 
- * controller you need.
- * 
- */
-const templateApi = require('../models/template.js')
-
-/* Step 3 
- * 
- * Create a new router.
- *
- * the router will "contain" all the request handlers that you define in this file.
- * TODO: rename this from templateRouter to something that makes sense. (e.g:
- * `shopRouter`)
- */
-const templateRouter = express.Router()
-
-/* Step 4
- * 
- * TODO: Put all request handlers here
- */
+const WheelApi = require('../models/wheel.js')
+const WheelRouter = express.Router()
 
 //get All
-
+WheelRouter.get('/', (req, res) => {
+  WheelApi.getAllWheels()
+    .then((newWheel) => {
+      return res.json(newWheel)
+    })
+})
 //create
-
+WheelRouter.post('/', (req, res) => {
+  WheelApi.createWheel(req.body)
+    .then((newWheel) => {
+      return res.json(newWheel)
+    })
+})
 //update
-
+WheelRouter.put('/:id', (req, res) => {
+  WheelApi.updateWheel(req.params.id, req.body)
+    .then((newWheel) => {
+      return res.json(newWheel)
+    })
+})
 //delete
-
+WheelRouter.delete('/:id', (req, res) => {
+  WheelApi.deleteWheel(req.params.id)
+    .then((newWheel) => {
+      return res.json(newWheel)
+    })
+})
 //get one
-/* Step 6
- *
- * Export the router from the file.
- *
- */
+WheelRouter.get('/:id', (req, res) => {
+  WheelApi.getOneWheel(req.params.id)
+    .then((newWheel) => {
+      return res.json(newWheel)
+    })
+})
+
 module.exports = {
-  templateRouter
+  WheelRouter
 }
