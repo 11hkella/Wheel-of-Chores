@@ -1,13 +1,8 @@
 const mongoose = require('./connection.js')
 
 const MemberSchema = new mongoose.Schema({
-  title: String,
-  description: String,
-  dateCreated: { type: Date, default: Date.now },
-  chores: String,
-  people: String,
-  choreId: mongoose.ObjectId,
-  personId: mongoose.ObjectId
+  name: String,
+  image: String
 })
 
 const MemberCollection = mongoose.model('Member', MemberSchema)
