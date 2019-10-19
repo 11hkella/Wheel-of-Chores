@@ -62,6 +62,8 @@ app.set('view engine', 'hbs')
  * the paths defined in the router.
  */
 app.use('/', WheelRouter)
+app.use('/chore', ChoreRouter)
+app.use('/member', MemberRouter)
 
 /* Step 5
  *
