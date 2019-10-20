@@ -1,6 +1,6 @@
 const express = require('express')
 
-const MemberApi = require('../models/Member.js')
+const MemberApi = require('../models/member.js')
 const MemberRouter = express.Router()
 
 //get All

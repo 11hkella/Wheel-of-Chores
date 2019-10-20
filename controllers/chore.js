@@ -1,6 +1,6 @@
 const express = require('express')
 
-const ChoreApi = require('../models/Chore.js')
+const ChoreApi = require('../models/chore.js')
 const ChoreRouter = express.Router()
 
 //get All
