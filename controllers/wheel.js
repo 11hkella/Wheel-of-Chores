@@ -34,8 +34,8 @@ WheelRouter.delete('/:id', (req, res) => {
 //get one
 WheelRouter.get('/:id', (req, res) => {
   WheelApi.getOneWheel(req.params.id)
-    .then((newWheel) => {
-      return res.json(newWheel)
+    .then((selectedWheel) => {
+      return res.render("wheels/oneWheel", { selectedWheel })
     })
 })
 
