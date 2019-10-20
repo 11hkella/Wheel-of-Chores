@@ -6,8 +6,8 @@ const WheelRouter = express.Router()
 //get All
 WheelRouter.get('/', (req, res) => {
   WheelApi.getAllWheels()
-    .then((newWheel) => {
-      return res.json(newWheel)
+    .then((wheels) => {
+      return res.render('wheels/template', { wheels })
     })
 })
 //create
