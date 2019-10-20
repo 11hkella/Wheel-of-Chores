@@ -4,10 +4,6 @@ const WheelSchema = new mongoose.Schema({
   title: String,
   description: String,
   dateCreated: { type: Date, default: Date.now },
-  chores: String,
-  people: String,
-  choreId: mongoose.ObjectId,
-  personId: mongoose.ObjectId
 })
 
 const WheelCollection = mongoose.model('Wheel', WheelSchema)

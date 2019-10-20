@@ -2,7 +2,7 @@
 
 <p>description: {{selectedWheel.description}}</p>
 <p>dateCreated: {{selectedWheel.dateCreated}}</p>
-<p>chores: {{selectedWheel.chores}}</p>
-<p>people: {{selectedWheel.people}}</p>
-<p>choreId: {{selectedWheel.choreId}}</p>
-<p>personId: {{selectedWheel.personId}}</p>
+
+<form action="/wheel/{{selectedWheel._id}}?_method=DELETE" method="POST">
+  <input type="submit" value="Delete">
+</form>

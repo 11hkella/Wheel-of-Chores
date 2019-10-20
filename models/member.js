@@ -2,7 +2,8 @@ const mongoose = require('./connection.js')
 
 const MemberSchema = new mongoose.Schema({
   name: String,
-  image: String
+  picture: String,
+  choreId: mongoose.ObjectId,
 })
 
 const MemberCollection = mongoose.model('Member', MemberSchema)

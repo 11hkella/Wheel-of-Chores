@@ -1,10 +1,10 @@
 const mongoose = require('./connection.js')
 
 const ChoreSchema = new mongoose.Schema({
-  title: String,
-  description: String,
+  chore: String,
+  frequency: String,
   dateCreated: { type: Date, default: Date.now },
-  assignment: String,
+  memberId: mongoose.ObjectId,
 })
 
 const ChoreCollection = mongoose.model('Chore', ChoreSchema)

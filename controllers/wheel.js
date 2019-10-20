@@ -11,10 +11,13 @@ WheelRouter.get('/', (req, res) => {
     })
 })
 //create
+WheelRouter.get('/create', (req, res) => {
+  res.render('wheels/createTemplate')
+})
 WheelRouter.post('/', (req, res) => {
   WheelApi.createWheel(req.body)
-    .then((newWheel) => {
-      return res.json(newWheel)
+    .then(() => {
+      return res.redirect('/wheel')
     })
 })
 //update
@@ -28,7 +31,7 @@ WheelRouter.put('/:id', (req, res) => {
 WheelRouter.delete('/:id', (req, res) => {
   WheelApi.deleteWheel(req.params.id)
     .then((newWheel) => {
-      return res.json(newWheel)
+      return res.redirect("/wheel")
     })
 })
 //get one

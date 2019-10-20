@@ -1,12 +1,7 @@
-<form method="POST" action="/<TODO: models url here (e.g: /accounts)>">
+<h1>Create a New Chore Wheel</h1>
 
-  <!--
-    Template for creating input form for a string object key called stringMember
-    NOTE: for numeric input fields use `type="number"`
-  --->
-  <input type="text" value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" />
-
-  <input type="checkbox" name="<TODO: model.booleanMember (e.g: account.isActive)" value="true" />
-
-  <input type="submit" value="Create Shop" />
+<form action="/wheel" method="POST">
+  <input type="text" name="title" placeholder="title" />
+  <input type="text" name="description" placeholder="description" />
+  <input type="submit" value="Create" />
 </form>
