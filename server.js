@@ -18,6 +18,8 @@ const methodOverride = require('method-override')
  *
  */
 const { WheelRouter } = require('./controllers/wheel.js')
+const { ChoreRouter } = require('./controllers/chore.js')
+const { MemberRouter } = require('./controllers/member.js')
 
 
 /* Step 3
