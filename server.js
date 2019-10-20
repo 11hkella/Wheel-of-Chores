@@ -63,7 +63,7 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use('/', WheelRouter)
+app.use('/wheel', WheelRouter)
 app.use('/chore', ChoreRouter)
 app.use('/member', MemberRouter)
 
