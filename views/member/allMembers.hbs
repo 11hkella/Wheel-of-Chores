@@ -1,0 +1,13 @@
+{{!-- All Members Page/ Home Page --}}
+
+<h1>Members</h1>
+
+{{#each allMembers}}
+<a href="/member/{{_id}}">
+  <p>{{name}}</p>
+</a>
+{{/each}}
+
+<a href="/member/create">
+  <button>Create New Member</button>
+</a>

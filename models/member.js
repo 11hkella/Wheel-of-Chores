@@ -2,7 +2,9 @@ const mongoose = require('./connection.js')
 
 const MemberSchema = new mongoose.Schema({
   name: String,
-  picture: String,
+  picture: {
+    type: String, default: "https://i.pinimg.com/originals/0f/7b/fa/0f7bfa4e6775b5977694a6036fc85b48.png"
+  },
   choreId: mongoose.ObjectId,
 })
 

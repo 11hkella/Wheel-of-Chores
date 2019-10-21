@@ -1,0 +1,12 @@
+<h1>{{selectedMember.name}}</h1>
+
+<p>picture: {{selectedMember.picture}}</p>
+<p>choreId: {{selectedMember.choreId}}</p>
+
+<a href="/Member/update/{{selectedMember._id}}">
+  <button>Update</button>
+</a>
+
+<form action="/member/{{selectedMember._id}}?_method=DELETE" method="POST">
+  <input type="submit" value="Delete">
+</form>
