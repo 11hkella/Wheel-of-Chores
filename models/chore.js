@@ -2,7 +2,7 @@ const mongoose = require('./connection.js')
 
 const ChoreSchema = new mongoose.Schema({
   chore: String,
-  frequency: String,
+  frequency: Number,
   dateCreated: { type: Date, default: Date.now },
   memberId: mongoose.ObjectId,
 })

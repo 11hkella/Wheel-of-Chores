@@ -1,0 +1,7 @@
+<h1>Update a Chore</h1>
+
+<form action="/chore/{{selectedChore._id}}?_method=PUT" method="POST">
+  <input type="text" name="chore" placeholder="chore" value="{{selectedChore.chore}}" />
+  <input type="number" name="frequency" placeholder="frequency in days" value="{{selectedChore.frequency}}" />
+  <input type="submit" value="Update">
+</form>
