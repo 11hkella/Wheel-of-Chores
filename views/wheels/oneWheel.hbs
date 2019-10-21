@@ -3,6 +3,10 @@
 <p>description: {{selectedWheel.description}}</p>
 <p>dateCreated: {{selectedWheel.dateCreated}}</p>
 
+<a href="/wheel/update/{{selectedWheel._id}}">
+  <button>Update</button>
+</a>
+
 <form action="/wheel/{{selectedWheel._id}}?_method=DELETE" method="POST">
   <input type="submit" value="Delete">
 </form>

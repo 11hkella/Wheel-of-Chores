@@ -21,10 +21,16 @@ WheelRouter.post('/', (req, res) => {
     })
 })
 //update
+WheelRouter.get('/update/:id', (req, res) => {
+  WheelApi.getOneWheel(req.params.id)
+    .then((selectedWheel) => {
+      res.render('wheels/editFormTemplate', { selectedWheel })
+    })
+})
 WheelRouter.put('/:id', (req, res) => {
   WheelApi.updateWheel(req.params.id, req.body)
     .then((newWheel) => {
-      return res.json(newWheel)
+      return res.redirect('/wheel')
     })
 })
 //delete
