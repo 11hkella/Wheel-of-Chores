@@ -2,13 +2,17 @@
 <img src="{{selectedMember.picture}}" alt="profile image">
 <p>wheelId: {{selectedMember.wheelId}}</p>
 
-<a href="/Member/update/{{selectedMember._id}}">
+<a href="/member/update/{{selectedMember._id}}">
   <button>Update</button>
 </a>
 
 <form action="/member/{{selectedMember._id}}?_method=DELETE" method="POST">
   <input type="submit" value="Delete">
 </form>
+
+<a href="/wheel/{{selectedMember.wheelId}}">
+  <button>Back to {{selectedMember.name}}'s wheel</button>
+</a>
 
 {{!-- *********** Chores List ************** --}}
 <h1>Chores</h1>
@@ -18,7 +22,7 @@
 </a>
 <p>dateCreated: {{dateCreated}}</p>
 <p>completed: {{completed}}</p>
-<p>wheelId: {{wheelId}}</p>
+<p>memberId: {{memberId}}</p>
 {{!-- Update Chore --}}
 <a href="/chore/update/{{_id}}">
   <button>Update this chore</button>
@@ -30,6 +34,6 @@
 {{/each}}
 <br />
 {{!-- Create Chore --}}
-<a href="/chore/create/{{selectedWheel._id}}">
+<a href="/chore/create/{{selectedMember._id}}">
   <button>Add Chore</button>
 </a>

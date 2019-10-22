@@ -1,6 +1,7 @@
 const express = require('express')
 
 const MemberApi = require('../models/member.js')
+const ChoreApi = require('../models/chore.js')
 const MemberRouter = express.Router()
 
 //get All
@@ -28,9 +29,9 @@ MemberRouter.get('/update/:id', (req, res) => {
     })
 })
 MemberRouter.put('/:id', (req, res) => {
-  MemberApi.updateMember(req.params.id, req.body)
-    .then(() => {
-      return res.redirect(`/wheel`)
+  Promise.all([MemberApi.updateMember(req.params.id, req.body), MemberApi.getOneMember(req.params.id)])
+    .then(([updateInfo, selectedMember]) => {
+      return res.redirect(`/wheel/${selectedMember.wheelId}`)
     })
 })
 //delete
@@ -46,9 +47,9 @@ MemberRouter.delete('/:id', (req, res) => {
 })
 //get one
 MemberRouter.get('/:id', (req, res) => {
-  MemberApi.getOneMember(req.params.id)
-    .then((selectedMember) => {
-      return res.render('member/selectedMember', { selectedMember })
+  Promise.all([MemberApi.getOneMember(req.params.id), ChoreApi.findChoresByMemberId(req.params.id)])
+    .then(([selectedMember, chores]) => {
+      return res.render('member/selectedMember', { selectedMember, chores })
     })
 })
 

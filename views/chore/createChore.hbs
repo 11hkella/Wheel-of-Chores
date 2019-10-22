@@ -1,9 +1,9 @@
 <h1>Create a New Chore</h1>
 
-<form action="/chore/{{wheelId}}" method="POST">
+<form action="/chore/{{memberId}}" method="POST">
   <input type="text" name="chore" placeholder="chore" />
   <input type="Number" name="frequency" placeholder="frequency in days" />
   <input type="boolean" name="completed" placeholder="completed? true/false" value="false" />
-  <input type="text" name="wheelId" placeholder="wheelId" value="{{wheelId}}" />
+  <input type="text" name="memberId" placeholder="memberId" value="{{memberId}}" />
   <input type="submit" value="Create">
 </form>

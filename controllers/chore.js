@@ -11,13 +11,13 @@ ChoreRouter.get('/', (req, res) => {
     })
 })
 //create
-ChoreRouter.get('/create/:wheelId', (req, res) => {
-  res.render('chore/createChore', { wheelId: req.params.wheelId })
+ChoreRouter.get('/create/:memberId', (req, res) => {
+  res.render('chore/createChore', { memberId: req.params.memberId })
 })
-ChoreRouter.post('/:wheelId', (req, res) => {
+ChoreRouter.post('/:memberId', (req, res) => {
   ChoreApi.createChore(req.body)
     .then(() => {
-      return res.redirect(`/wheel/${req.params.wheelId}`)
+      return res.redirect(`/member/${req.params.memberId}`)
     })
 })
 //update
@@ -25,12 +25,6 @@ ChoreRouter.get('/update/:id', (req, res) => {
   ChoreApi.getOneChore(req.params.id)
     .then((selectedChore) => {
       res.render('chore/updateChore', { selectedChore })
-    })
-})
-ChoreRouter.get('/assign/:id', (req, res) => {
-  ChoreApi.getOneChore(req.params.id)
-    .then((selectedChore) => {
-      res.render('chore/assignChore', { selectedChore })
     })
 })
 ChoreRouter.put('/:id', (req, res) => {

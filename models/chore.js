@@ -5,9 +5,7 @@ const ChoreSchema = new mongoose.Schema({
   frequency: Number,
   completed: Boolean,
   dateCreated: { type: Date, default: Date.now },
-  assignment: String,
-  assignmentId: mongoose.ObjectId,
-  wheelId: mongoose.ObjectId,
+  memberId: mongoose.ObjectId,
 })
 
 const ChoreCollection = mongoose.model('Chore', ChoreSchema)
@@ -18,8 +16,8 @@ const getAllChores = () => {
 }
 
 //find by wheelId
-const findChoresByWheelId = (wheelId) => {
-  return ChoreCollection.find({ wheelId })
+const findChoresByMemberId = (memberId) => {
+  return ChoreCollection.find({ memberId })
 }
 
 //create
@@ -48,5 +46,5 @@ module.exports = {
   updateChore,
   deleteChore,
   getOneChore,
-  findChoresByWheelId
+  findChoresByMemberId
 }
