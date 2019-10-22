@@ -1,12 +1,62 @@
+{{!-- ************ wheel info ************ --}}
 <h1>{{selectedWheel.title}}</h1>
 
 <p>description: {{selectedWheel.description}}</p>
 <p>dateCreated: {{selectedWheel.dateCreated}}</p>
+<p>_id: {{selectedWheel._id}}</p>
 
+{{!-- Update wheel --}}
 <a href="/wheel/update/{{selectedWheel._id}}">
-  <button>Update</button>
+  <button>Update Wheel</button>
+</a>
+{{!-- delete wheel --}}
+<form action="/wheel/{{selectedWheel._id}}?_method=DELETE" method="POST">
+  <input type="submit" value="Delete Wheel">
+</form>
+{{!-- ************** Member section ******************** --}}
+<h2>Members</h2>
+{{#each members}}
+<a href="/member/{{_id}}">
+  <h4>{{name}}</h4>
+</a>
+<img src="{{picture}}" alt="{{name}}'s Profile Pic" />
+<p>wheelId: {{wheelId}}</p>
+{{!-- Update --}}
+<a href="/Member/update/{{_id}}">
+  <button>Update {{name}}'s Info</button>
+</a>
+{{!-- Delete --}}
+<form action="/member/{{_id}}?_method=DELETE" method="POST">
+  <input type="submit" value="Delete {{name}} from this Wheel">
+</form>
+{{/each}}
+<br />
+{{!-- Create member --}}
+<a href="/member/create/{{selectedWheel._id}}">
+  <button>Add Member</button>
 </a>
 
-<form action="/wheel/{{selectedWheel._id}}?_method=DELETE" method="POST">
-  <input type="submit" value="Delete">
+
+{{!-- *********** Chores List **************
+<h1>Chores</h1>
+{{#each chores}}
+<a href="/chore/{{_id}}">
+  <h4>{{chore}}</h4>
+</a>
+<p>dateCreated: {{dateCreated}}</p>
+<p>completed: {{completed}}</p>
+<p>wheelId: {{wheelId}}</p>
+{{!-- Update Chore --}}
+<a href="/chore/update/{{_id}}">
+  <button>Update this chore</button>
+</a>
+{{!-- Delete Chore --}}
+<form action="/chore/{{_id}}?_method=DELETE" method="POST">
+  <input type="submit" value="Delete this chore">
 </form>
+{{/each}}
+<br />
+{{!-- Create Chore --}}
+<a href="/chore/create/{{selectedWheel._id}}">
+  <button>Add Chore</button>
+</a> --}}

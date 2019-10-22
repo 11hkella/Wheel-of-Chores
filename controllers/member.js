@@ -11,13 +11,13 @@ MemberRouter.get('/', (req, res) => {
     })
 })
 //create
-MemberRouter.get('/create', (req, res) => {
-  res.render('member/createMember')
+MemberRouter.get('/create/:wheelId', (req, res) => {
+  res.render('member/createMember', { wheelId: req.params.wheelId })
 })
-MemberRouter.post('/', (req, res) => {
+MemberRouter.post('/:wheelId', (req, res) => {
   MemberApi.createMember(req.body)
     .then(() => {
-      return res.redirect('member')
+      return res.redirect(`/wheel/${req.params.wheelId}`)
     })
 })
 //update
@@ -29,15 +29,19 @@ MemberRouter.get('/update/:id', (req, res) => {
 })
 MemberRouter.put('/:id', (req, res) => {
   MemberApi.updateMember(req.params.id, req.body)
-    .then((newMember) => {
-      return res.redirect(`/member/${req.params.id}`)
+    .then(() => {
+      return res.redirect(`/wheel`)
     })
 })
 //delete
 MemberRouter.delete('/:id', (req, res) => {
-  MemberApi.deleteMember(req.params.id)
-    .then(() => {
-      return res.redirect('/member')
+  MemberApi.getOneMember(req.params.id)
+    .then((selectedMember) => {
+      const wheelId = selectedMember.wheelId
+      MemberApi.deleteMember(req.params.id)
+        .then(() => {
+          return res.redirect(`/wheel/${wheelId}`)
+        })
     })
 })
 //get one

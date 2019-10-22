@@ -1,6 +1,8 @@
 const express = require('express')
 
 const WheelApi = require('../models/wheel.js')
+const MemberApi = require('../models/member.js')
+const ChoreApi = require('../models/chore.js')
 const WheelRouter = express.Router()
 
 //get All
@@ -42,9 +44,9 @@ WheelRouter.delete('/:id', (req, res) => {
 })
 //get one
 WheelRouter.get('/:id', (req, res) => {
-  WheelApi.getOneWheel(req.params.id)
-    .then((selectedWheel) => {
-      return res.render("wheels/oneWheel", { selectedWheel })
+  Promise.all([WheelApi.getOneWheel(req.params.id), MemberApi.findMembersByWheelId(req.params.id)])
+    .then(([selectedWheel, members]) => {
+      return res.render("wheels/oneWheel", { selectedWheel, members })
     })
 })
 

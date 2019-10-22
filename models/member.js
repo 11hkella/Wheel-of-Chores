@@ -5,7 +5,7 @@ const MemberSchema = new mongoose.Schema({
   picture: {
     type: String, default: "https://i.pinimg.com/originals/0f/7b/fa/0f7bfa4e6775b5977694a6036fc85b48.png"
   },
-  choreId: mongoose.ObjectId,
+  wheelId: mongoose.ObjectId,
 })
 
 const MemberCollection = mongoose.model('Member', MemberSchema)
@@ -13,6 +13,11 @@ const MemberCollection = mongoose.model('Member', MemberSchema)
 //get All
 const getAllMembers = () => {
   return MemberCollection.find({})
+}
+
+//find by wheelId
+const findMembersByWheelId = (wheelId) => {
+  return MemberCollection.find({ wheelId })
 }
 
 //create
@@ -40,5 +45,6 @@ module.exports = {
   createMember,
   updateMember,
   deleteMember,
-  getOneMember
+  getOneMember,
+  findMembersByWheelId
 }

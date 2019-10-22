@@ -11,13 +11,13 @@ ChoreRouter.get('/', (req, res) => {
     })
 })
 //create
-ChoreRouter.get('/create', (req, res) => {
-  res.render('chore/createChore')
+ChoreRouter.get('/create/:wheelId', (req, res) => {
+  res.render('chore/createChore', { wheelId: req.params.wheelId })
 })
-ChoreRouter.post('/', (req, res) => {
+ChoreRouter.post('/:wheelId', (req, res) => {
   ChoreApi.createChore(req.body)
     .then(() => {
-      return res.redirect('/chore')
+      return res.redirect(`/wheel/${req.params.wheelId}`)
     })
 })
 //update
@@ -25,6 +25,12 @@ ChoreRouter.get('/update/:id', (req, res) => {
   ChoreApi.getOneChore(req.params.id)
     .then((selectedChore) => {
       res.render('chore/updateChore', { selectedChore })
+    })
+})
+ChoreRouter.get('/assign/:id', (req, res) => {
+  ChoreApi.getOneChore(req.params.id)
+    .then((selectedChore) => {
+      res.render('chore/assignChore', { selectedChore })
     })
 })
 ChoreRouter.put('/:id', (req, res) => {
@@ -35,9 +41,13 @@ ChoreRouter.put('/:id', (req, res) => {
 })
 //delete
 ChoreRouter.delete('/:id', (req, res) => {
-  ChoreApi.deleteChore(req.params.id)
-    .then(() => {
-      return res.redirect('/chore')
+  ChoreApi.getOneChore(req.params.id)
+    .then((selectedChore) => {
+      const wheelId = selectedChore.wheelId
+      ChoreApi.deleteChore(req.params.id)
+        .then(() => {
+          return res.redirect(`/wheel/${wheelId}`)
+        })
     })
 })
 //get one
