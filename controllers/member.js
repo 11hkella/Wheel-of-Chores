@@ -28,22 +28,31 @@ MemberRouter.get('/update/:id', (req, res) => {
       res.render('member/updateMember', { selectedMember })
     })
 })
-MemberRouter.put('/:id', (req, res) => {
-  Promise.all([MemberApi.updateMember(req.params.id, req.body), MemberApi.getOneMember(req.params.id)])
-    .then(([updateInfo, selectedMember]) => {
-      return res.redirect(`/wheel/${selectedMember.wheelId}`)
-    })
+MemberRouter.put('/:id', async (req, res) => {
+  await MemberApi.updateMember(req.params.id, req.body)
+  const selectedMember = await MemberApi.getOneMember(req.params.id)
+  return res.redirect(`/wheel/${selectedMember.wheelId}`)
+
+  // Promise.all([MemberApi.updateMember(req.params.id, req.body), MemberApi.getOneMember(req.params.id)])
+  //   .then(([updateInfo, selectedMember]) => {
+  //     return res.redirect(`/wheel/${selectedMember.wheelId}`)
+  //   })
 })
 //delete
-MemberRouter.delete('/:id', (req, res) => {
-  MemberApi.getOneMember(req.params.id)
-    .then((selectedMember) => {
-      const wheelId = selectedMember.wheelId
-      MemberApi.deleteMember(req.params.id)
-        .then(() => {
-          return res.redirect(`/wheel/${wheelId}`)
-        })
-    })
+MemberRouter.delete('/:id', async (req, res) => {
+  const selectedMember = await MemberApi.getOneMember(req.params.id)
+  const wheelId = selectedMember.wheelId
+  await MemberApi.deleteMember(req.params.id)
+  return res.redirect(`/wheel/${wheelId}`)
+
+  // MemberApi.getOneMember(req.params.id)
+  //   .then((selectedMember) => {
+  //     const wheelId = selectedMember.wheelId
+  //     MemberApi.deleteMember(req.params.id)
+  //       .then(() => {
+  //         return res.redirect(`/wheel/${wheelId}`)
+  //       })
+  //   })
 })
 //get one
 MemberRouter.get('/:id', (req, res) => {

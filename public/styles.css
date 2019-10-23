@@ -29,6 +29,10 @@ header{
   justify-content: center;
   margin: 10px auto;
 }
+.chore-item-container{
+  display: flex;
+  justify-content: space-between;
+}
 
 img{
   width: 100px;

@@ -43,18 +43,21 @@ WheelRouter.delete('/:id', (req, res) => {
     })
 })
 //get one
-WheelRouter.get('/:id', (req, res) => {
-  Promise.all([WheelApi.getOneWheel(req.params.id), MemberApi.findMembersByWheelId(req.params.id)])
-    .then(([selectedWheel, members]) => {
-      let thisMembersChores;
-      let thisWheelsChores = [];
-      members.forEach((i) => {
-        thisMembersChores = ChoreApi.findChoresByMemberId(i._id)
-        thisWheelsChores.push(thisMembersChores.chore)
-        console.log(thisWheelsChores)
-      })
-      return res.render("wheels/oneWheel", { selectedWheel, members, thisWheelsChores })
-    })
+WheelRouter.get('/:id', async (req, res) => {
+  const selectedWheel = await WheelApi.getOneWheel(req.params.id)
+  const members = await MemberApi.findMembersByWheelId(req.params.id)
+
+  for (let i = 0; i < members.length; i++) {
+    const memberChores = await ChoreApi.findChoresByMemberId(members[i]._id)
+    members[i].chores = memberChores
+  }
+  // members.forEach((member, index) => {
+  //   const memberChores = await ChoreApi.findChoresByMemberId(member._id)
+  //   member.chores = memberChores
+  // })
+
+  return res.render("wheels/oneWheel", { selectedWheel, members })
+
 })
 
 module.exports = {

@@ -41,9 +41,27 @@
     <form action="/member/{{_id}}?_method=DELETE" method="POST">
       <input type="submit" value="Delete {{name}} from this Wheel" />
     </form>
-    {{#each thisWheelsChores}}
-    <p>{{chore}}</p>
-    {{/each}}
+
+    {{!-- ######## CHORE LIST FOR EACH MEMBER #########--}}
+    <ul class="chores-container">
+      {{#each chores}}
+      {{#if completed}}
+      <li class="chore-done">{{chore}}</li>
+      {{else}}
+      <div class="chore-item-container">
+        <form action="/chore/udate/completed/{{_id}}?_method=PUT" method="POST">
+          <input type="submit" class="check-box" value="done?">
+        </form>
+        <li class="chore">{{chore}}</li>
+      </div>
+      {{/if}}
+
+
+
+
+
+      {{/each}}
+    </ul>
   </div>
   {{/each}}
 </div>
