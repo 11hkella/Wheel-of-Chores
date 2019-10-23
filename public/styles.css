@@ -1,3 +1,35 @@
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+
+.member-container{
+  display: flex;
+  justify-content: space-around;
+}
+.member-each-container{
+  background-color: rgba(78, 1, 150, 0.253);
+  padding: 10px;
+  border: 2px solid rgb(243, 242, 242);
+  border-radius: 10px;
+
+}
+.member-title-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  max-width: 300px;
+}
+.create-member-container{
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+
 img{
   width: 100px;
 }

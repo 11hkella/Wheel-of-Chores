@@ -1,37 +1,56 @@
 {{!-- ************ wheel info ************ --}}
-<h1>{{selectedWheel.title}}</h1>
+<header>
 
-<p>description: {{selectedWheel.description}}</p>
-<p>dateCreated: {{selectedWheel.dateCreated}}</p>
-<p>_id: {{selectedWheel._id}}</p>
+  <h1>{{selectedWheel.title}}</h1>
 
-{{!-- Update wheel --}}
-<a href="/wheel/update/{{selectedWheel._id}}">
-  <button>Update Wheel</button>
-</a>
-{{!-- delete wheel --}}
-<form action="/wheel/{{selectedWheel._id}}?_method=DELETE" method="POST">
-  <input type="submit" value="Delete Wheel">
-</form>
+  <p class="wheel-descrition">{{selectedWheel.description}}</p>
+
+  <div class="wheel-options-container">
+    {{!-- Update wheel --}}
+    <a href="/wheel/update/{{selectedWheel._id}}">
+      <button>Update Wheel</button>
+    </a>
+    {{!-- delete wheel --}}
+    <form action="/wheel/{{selectedWheel._id}}?_method=DELETE" method="POST">
+      <input type="submit" value="Delete Wheel">
+    </form>
+
+  </div>
+
+</header>
+
 {{!-- ************** Member section ******************** --}}
-<h2>Members</h2>
-{{#each members}}
-<a href="/member/{{_id}}">
-  <h4>{{name}}</h4>
-</a>
-<img src="{{picture}}" alt="{{name}}'s Profile Pic" />
-<p>wheelId: {{wheelId}}</p>
-{{!-- Update --}}
-<a href="/Member/update/{{_id}}">
-  <button>Update {{name}}'s Info</button>
-</a>
-{{!-- Delete --}}
-<form action="/member/{{_id}}?_method=DELETE" method="POST">
-  <input type="submit" value="Delete {{name}} from this Wheel" />
-</form>
-{{/each}}
-<br />
+<div class="member-container">
+  {{#each members}}
+  <div class="member-each-container">
+    <div class="member-title-container">
+      <a href="/member/{{_id}}">
+        <img src="{{picture}}" alt="{{name}}'s Profile Pic" />
+      </a>
+      <a href="/member/{{_id}}">
+        <h4>{{name}}</h4>
+      </a>
+    </div>
+
+
+    {{!-- Update --}}
+    <a href="/Member/update/{{_id}}">
+      <button>Update {{name}}'s Info</button>
+    </a>
+    {{!-- Delete --}}
+    <form action="/member/{{_id}}?_method=DELETE" method="POST">
+      <input type="submit" value="Delete {{name}} from this Wheel" />
+    </form>
+
+    {{!-- chore list goes here --}}
+
+  </div>
+  {{/each}}
+</div>
+
 {{!-- Create member --}}
-<a href="/member/create/{{selectedWheel._id}}">
-  <button>Add Member</button>
-</a>
+<div class="create-member-container">
+  <a href="/member/create/{{selectedWheel._id}}">
+    <button>Add Member</button>
+  </a>
+</div>

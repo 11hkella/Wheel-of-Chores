@@ -37,10 +37,10 @@ ChoreRouter.put('/:id', (req, res) => {
 ChoreRouter.delete('/:id', (req, res) => {
   ChoreApi.getOneChore(req.params.id)
     .then((selectedChore) => {
-      const wheelId = selectedChore.wheelId
+      const memberId = selectedChore.memberId
       ChoreApi.deleteChore(req.params.id)
         .then(() => {
-          return res.redirect(`/wheel/${wheelId}`)
+          return res.redirect(`/member/${memberId}`)
         })
     })
 })
