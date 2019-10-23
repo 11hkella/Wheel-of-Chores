@@ -13,16 +13,29 @@ header{
 }
 .member-each-container{
   background-color: rgba(78, 1, 150, 0.253);
-  padding: 10px;
+  padding: 10px 20px;
   border: 2px solid rgb(243, 242, 242);
   border-radius: 10px;
+  max-width: 500px;
+  min-width: 250px;
 
 }
 .member-title-container{
   display: flex;
   justify-content: space-around;
-  align-items: flex-end;
-  max-width: 300px;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.205);
+}
+.member-pic-sm-container{
+  width:100px;
+  height: 100px;
+  border: 1px solid rgba(26, 26, 26, 0.555);
+  border-radius: 99%;
+  overflow: hidden;
+}
+.member-pic-sm{
+  width: 100px;
 }
 .create-member-container{
   display: flex;
@@ -32,8 +45,4 @@ header{
 .chore-item-container{
   display: flex;
   justify-content: space-between;
-}
-
-img{
-  width: 100px;
 }

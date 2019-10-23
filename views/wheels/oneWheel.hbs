@@ -25,7 +25,9 @@
   <div class="member-each-container">
     <div class="member-title-container">
       <a href="/member/{{_id}}">
-        <img src="{{picture}}" alt="{{name}}'s Profile Pic" />
+        <div class="member-pic-sm-container">
+          <img src="{{picture}}" alt="{{name}}'s Profile Pic" class="member-pic-sm" />
+        </div>
       </a>
       <a href="/member/{{_id}}">
         <h4>{{name}}</h4>
@@ -39,7 +41,7 @@
     </a>
     {{!-- Delete --}}
     <form action="/member/{{_id}}?_method=DELETE" method="POST">
-      <input type="submit" value="Delete {{name}} from this Wheel" />
+      <input type="image" src="../../public/images/delete-icon.jpeg" alt="Delete Form" />
     </form>
 
     {{!-- ######## CHORE LIST FOR EACH MEMBER #########--}}
