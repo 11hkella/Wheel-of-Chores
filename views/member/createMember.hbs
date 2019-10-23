@@ -1,8 +1,14 @@
-<h1>Create a New Member</h1>
+<header>
+  <h1>Create a New Member</h1>
+</header>
 
-<form action="/member/{{wheelId}}" method="POST">
-  <input type="text" name="name" placeholder="name" />
-  <input type="text" name="picture" placeholder="picture URL" />
-  <input type="text" name="wheelId" placeholder="choreId" value="{{wheelId}}" />
+<form action="/member/{{wheelId}}" method="POST" class="create-member-form">
+
+  <div class="create-member-inputs-containter">
+    <input type="text" name="name" placeholder="name" />
+    <input type="text" name="picture" placeholder="picture URL" />
+  </div>
+
+  <input type="text" name="wheelId" placeholder="choreId" value="{{wheelId}}" style="display:none;" />
   <input type="submit" value="Create" />
 </form>

@@ -1,21 +1,21 @@
 {{!-- ************ wheel info ************ --}}
 <header>
+  {{!-- Update wheel --}}
+  <a href="/wheel/update/{{selectedWheel._id}}">
+    <button>Update Wheel</button>
+  </a>
 
-  <h1>{{selectedWheel.title}}</h1>
-
-  <p class="wheel-descrition">{{selectedWheel.description}}</p>
-
-  <div class="wheel-options-container">
-    {{!-- Update wheel --}}
-    <a href="/wheel/update/{{selectedWheel._id}}">
-      <button>Update Wheel</button>
-    </a>
-    {{!-- delete wheel --}}
-    <form action="/wheel/{{selectedWheel._id}}?_method=DELETE" method="POST">
-      <input type="submit" value="Delete Wheel">
-    </form>
-
+  <div class="hero-container">
+    <h1>{{selectedWheel.title}}</h1>
+    <p class="wheel-descrition">{{selectedWheel.description}}</p>
   </div>
+
+  {{!-- delete wheel --}}
+  <form action="/wheel/{{selectedWheel._id}}?_method=DELETE" method="POST">
+    <input type="submit" value="Delete Wheel">
+  </form>
+
+
 
 </header>
 
