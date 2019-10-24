@@ -4,22 +4,72 @@
   align-items: flex-start;
   margin: 13px auto;
   padding-top: 5px;
-  border-bottom: 1px solid #00000038;
 }
 body{
   background-image: url('images/art-deco-pattern1.jpg');
   background-size: cover;
 }
-
+header{
+  background-color: #fac20b;
+  padding-bottom: 167px;
+}
+main{
+  position: relative;
+  background-color: rgb(253, 253, 253);
+  margin: 0 auto;
+  width: 77vw;
+  bottom: 114px;
+  border: 2px solid rgb(3, 3, 3);
+  border-radius: 9px;
+  background-color: rgb(3, 3, 3);
+}
 a{
   text-decoration: none;
+  color: rgb(3, 3, 3);
 }
-
 h1{
   font-size: 3em;
   padding: 7px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poiret One', cursive;
 }
+
+/* WHEEL SELECT SCREEN  */
+.wheel-select-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 3px;
+  background-color: rgb(3, 3, 3);
+  border: 2px solid rgb(253, 253, 253);
+  border-radius: 6px;
+}
+.wheel-select{
+  display: inline-block;
+  margin: 10px 70px;
+  border: 1px solid rgb(253, 253, 253);
+  border-radius: 52px;
+  padding: 13px;
+
+}
+.wheel-image-conatiner{
+  width: 187px;
+  height: 187px;
+  background-image: url('images/art-deco-wheel.jpg');
+  background-size: contain;
+  border-radius: 99%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fac20b;
+}
+.wheel-select-title{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: rgb(253, 253, 253);
+}
+
 .member-container{
   display: flex;
   justify-content: space-around;
@@ -94,11 +144,14 @@ h1{
   left: 21px;
   bottom: -32px;
   display: inline-block;
+  padding:4px;
+  border: 1px double black;
 }
 .home-button{
   font-family: 'Poiret One', cursive;
   font-size: 2em;
   line-height: 24px;
+  color: black;
 }
 .chores-home-button{
   font-size: 43px;

@@ -9,17 +9,16 @@
     </a>
   </div>
   <div class="page-title">
-    <h1>Wheels</h1>
+    <a href="/wheel/create">
+      <h1>+ Wheel</h1>
+    </a>
   </div>
 </header>
-
-
-{{#each allWheels}}
-<a href="/wheel/{{_id}}">
-  <p>{{title}}</p>
-</a>
-{{/each}}
-
-<a href="/wheel/create">
-  <button>Create New Wheel</button>
-</a>
+<main>
+  <div class="wheel-select-container">
+    {{#each allWheels}}
+    <a class="wheel-select" href="/wheel/{{_id}}">
+      {{!-- <div class="wheel-image-conatiner"> --}}
+      <p class="wheel-select-title">{{title}}</p>
+      {{!-- </div> --}} </a> {{/each}} </div>
+</main>
