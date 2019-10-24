@@ -14,15 +14,17 @@
       <p class="wheel-descrition">{{selectedWheel.description}}</p>
     </div>
 
-    {{!-- Update wheel --}}
-    <a href="/wheel/update/{{selectedWheel._id}}">
-      <button>Update Wheel</button>
-    </a>
+    <div class="wheel-options-container">
+      {{!-- Update wheel --}}
+      <a href="/wheel/update/{{selectedWheel._id}}">
+        <button>Update Wheel</button>
+      </a>
 
-    {{!-- delete wheel --}}
-    <form action="/wheel/{{selectedWheel._id}}?_method=DELETE" method="POST">
-      <input type="submit" value="Delete Wheel">
-    </form>
+      {{!-- delete wheel --}}
+      <form action="/wheel/{{selectedWheel._id}}?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Wheel">
+      </form>
+    </div>
   </div>
 </header>
 
@@ -38,7 +40,7 @@
         </div>
       </a>
       <a href="/member/{{_id}}">
-        <h4>{{name}}</h4>
+        <h3>{{name}}</h3>
       </a>
     </div>
     {{!-- Member Options --}}
@@ -63,18 +65,22 @@
       {{#if completed}}
       <li class="chore-done">{{chore}}</li>
       {{else}}
-      <div class="chore-item-container">
-        <form action="/chore/udate/completed/{{_id}}?_method=PUT" method="POST">
-          <input type="submit" class="check-box" value="done?">
-        </form>
+
+      <li class="chore-item-container">
+        <p class="chore">{{chore}}</p>
+
         <form action="/chore/{{_id}}?_method=DELETE" method="POST">
           <input type="submit" value="delete">
         </form>
+
         <a href="/chore/update/{{_id}}">
           <button>Update</button>
         </a>
-        <li class="chore">{{chore}}</li>
-      </div>
+
+        <form action="/chore/udate/completed/{{_id}}?_method=PUT" method="POST">
+          <input type="submit" class="check-box" value="done?">
+        </form>
+      </li>
       {{/if}}
 
 

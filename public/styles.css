@@ -1,6 +1,6 @@
 .page-title{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-start;
   margin: 13px auto;
   padding-top: 5px;
@@ -22,6 +22,7 @@ main{
   border: 2px solid rgb(3, 3, 3);
   border-radius: 9px;
   background-color: rgb(3, 3, 3);
+  padding: 4px;
 }
 a{
   text-decoration: none;
@@ -32,7 +33,32 @@ h1{
   padding: 7px;
   font-family: 'Poiret One', cursive;
 }
+h2 {
+  color: rgb(253, 253, 253);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2em;
+  text-align: center;
 
+}
+h3{
+  font-size: 2em;
+  font-family: 'Poiret One', cursive;
+  color: rgb(3, 3, 3)
+}
+h4{
+  color: rgb(253, 253, 253);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6em;
+}
+p{
+  color: rgb(253, 253, 253);
+  font-family: 'Open Sans', sans-serif;
+
+}
+form{
+  display: flex;
+  justify-content: center;
+}
 /* WHEEL SELECT SCREEN  */
 .wheel-select-container{
   display: flex;
@@ -69,6 +95,9 @@ h1{
   text-transform: uppercase;
   color: rgb(253, 253, 253);
 }
+.wheel-options-container{
+
+}
 
 .member-container{
   display: flex;
@@ -77,22 +106,26 @@ h1{
 .member-each-container{
   background-color: rgba(78, 1, 150, 0.253);
   padding: 10px 20px;
-  border: 2px solid rgb(243, 242, 242);
   max-width: 500px;
   min-width: 250px;
-
+  position: relative;
+  background-color: rgb(253, 253, 253);
+  bottom: 114px;
+  border: 2px solid rgb(3, 3, 3);
+  border-radius: 9px;
+  padding: 4px 8px;
+  padding-right: 10px;
 }
 .member-title-container{
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-bottom: 8px;
-  border-bottom: 1px solid rgba(17, 17, 17, 0.205);
 }
 .member-pic-sm-container{
   width:100px;
   height: 100px;
-  border: 1px solid rgba(26, 26, 26, 0.555);
+  border: 2px solid rgb(3, 3, 3);
   border-radius: 99%;
   overflow: hidden;
 }
@@ -102,7 +135,7 @@ h1{
 .member-pic-big-container{
   width:200px;
   height: 200px;
-  border: 1px solid rgba(26, 26, 26, 0.555);
+  border: 3px solid rgb(253, 253, 253);
   border-radius: 99%;
   overflow: hidden;
 }
@@ -110,7 +143,12 @@ h1{
   width: 200px;
 }
 .member-options-container{
-  border-bottom: 1px dashed gray;
+  border-bottom: 1px solid rgba(7, 7, 7, 0.564);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 35px;
+  padding-bottom: 5px;
 }
 .create-member-container{
   display: flex;
@@ -120,6 +158,10 @@ h1{
 .chore-item-container{
   display: flex;
   justify-content: space-between;
+}
+.chore{
+  color:rgb(3, 3, 3);
+  padding: 0 5px;
 }
 
 
