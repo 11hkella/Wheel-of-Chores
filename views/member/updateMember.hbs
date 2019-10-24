@@ -1,12 +1,16 @@
-<div class="home-button-container">
-  <a href="/wheel/{{selectedMember.wheelId}}">
-    <p class="home-button">WHEEL <span class="span-home-button">of</span>
-      <br />
-      <span class="chores-home-button">CHORES</span></p>
-  </a>
-</div>
+<header>
+  <div class="home-button-container">
+    <a href="/wheel/{{selectedMember.wheelId}}">
+      <p class="home-button">WHEEL <span class="span-home-button">of</span>
+        <br />
+        <span class="chores-home-button">CHORES</span></p>
+    </a>
+  </div>
 
-<h1>Update a Member</h1>
+  <div class="page-title">
+    <h1>Update a Member</h1>
+  </div>
+</header>
 
 <form action="/member/{{selectedMember._id}}?_method=PUT" method="POST">
   <input type="text" name="name" placeholder="name" value="{{selectedMember.name}}" />

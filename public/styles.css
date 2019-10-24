@@ -1,10 +1,14 @@
-header{
+.page-title{
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   margin: 13px auto;
   padding-top: 5px;
   border-bottom: 1px solid #00000038;
+}
+body{
+  background-image: url('images/art-deco-pattern1.jpg');
+  background-size: cover;
 }
 
 a{
@@ -14,6 +18,7 @@ a{
 h1{
   font-size: 3em;
   padding: 7px;
+  font-family: 'Poppins', sans-serif;
 }
 .member-container{
   display: flex;
@@ -43,6 +48,16 @@ h1{
 }
 .member-pic-sm{
   width: 100px;
+}
+.member-pic-big-container{
+  width:200px;
+  height: 200px;
+  border: 1px solid rgba(26, 26, 26, 0.555);
+  border-radius: 99%;
+  overflow: hidden;
+}
+.member-pic-big{
+  width: 200px;
 }
 .member-options-container{
   border-bottom: 1px dashed gray;
@@ -76,8 +91,8 @@ h1{
 /* HOME PAGE LINK */
 .home-button-container{
   position: relative;
-  left: 18px;
-  bottom: -20px;
+  left: 21px;
+  bottom: -32px;
   display: inline-block;
 }
 .home-button{

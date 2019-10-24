@@ -1,12 +1,18 @@
-<div class="home-button-container">
-  <a href="/member/{{memberId}}">
-    <p class="home-button">WHEEL <span class="span-home-button">of</span>
-      <br />
-      <span class="chores-home-button">CHORES</span></p>
-  </a>
-</div>
+<header>
 
-<h1>Create a New Chore</h1>
+  <div class="home-button-container">
+    <a href="/member/{{memberId}}">
+      <p class="home-button">WHEEL <span class="span-home-button">of</span>
+        <br />
+        <span class="chores-home-button">CHORES</span></p>
+    </a>
+  </div>
+
+  <div class="page-title">
+    <h1>Create a New Chore</h1>
+  </div>
+
+</header>
 
 <form action="/chore/?memberId={{memberId}}" method="POST">
   <input type="text" name="chore" placeholder="chore" />

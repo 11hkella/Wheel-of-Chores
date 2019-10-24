@@ -6,9 +6,13 @@
   </a>
 </div>
 
-<h1>{{selectedMember.name}}</h1>
-<img src="{{selectedMember.picture}}" alt="profile image">
-<p>wheelId: {{selectedMember.wheelId}}</p>
+<div class="page-title">
+  <h1>{{selectedMember.name}}</h1>
+  <div class="member-pic-big-container">
+    <img src="{{selectedMember.picture}}" alt="profile image" class="member-pic-big" />
+  </div>
+</div>
+
 
 <a href="/member/update/{{selectedMember._id}}">
   <button>Update</button>
