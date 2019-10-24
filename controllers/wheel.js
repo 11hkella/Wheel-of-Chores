@@ -32,7 +32,7 @@ WheelRouter.get('/update/:id', (req, res) => {
 WheelRouter.put('/:id', (req, res) => {
   WheelApi.updateWheel(req.params.id, req.body)
     .then((newWheel) => {
-      return res.redirect('/wheel')
+      return res.redirect(`/wheel/${req.params.id}`)
     })
 })
 //delete
