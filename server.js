@@ -20,6 +20,7 @@ const methodOverride = require('method-override')
 const { WheelRouter } = require('./controllers/wheel.js')
 const { ChoreRouter } = require('./controllers/chore.js')
 const { MemberRouter } = require('./controllers/member.js')
+const { LandingRouter } = require('./controllers/landing.js')
 
 
 /* Step 3
@@ -66,6 +67,7 @@ app.set('view engine', 'hbs')
 app.use('/wheel', WheelRouter)
 app.use('/chore', ChoreRouter)
 app.use('/member', MemberRouter)
+app.use('/', LandingRouter)
 
 /* Step 5
  *
