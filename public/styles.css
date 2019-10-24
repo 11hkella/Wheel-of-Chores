@@ -29,7 +29,7 @@ a{
   color: rgb(3, 3, 3);
 }
 h1{
-  font-size: 3em;
+  font-size: 4em;
   padding: 7px;
   font-family: 'Poiret One', cursive;
 }
@@ -106,8 +106,6 @@ form{
 
 }
 .member-each-container{
-  background-color: rgba(78, 1, 150, 0.253);
-  padding: 10px 20px;
   max-width: 500px;
   min-width: 250px;
   position: relative;
@@ -203,4 +201,8 @@ form{
 }
 .span-home-button{
   font-size: 20px;;
+}
+.chore-done{
+  color: rgb(7, 137, 5);
+  font-style: italic;
 }
