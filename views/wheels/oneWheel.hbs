@@ -1,4 +1,12 @@
 {{!-- ************ wheel info ************ --}}
+<div class="home-button-container">
+  <a href="/wheel">
+    <p class="home-button">WHEEL <span class="span-home-button">of</span>
+      <br />
+      <span class="chores-home-button">CHORES</span></p>
+  </a>
+</div>
+
 <header>
   {{!-- Update wheel --}}
   <a href="/wheel/update/{{selectedWheel._id}}">
@@ -21,6 +29,7 @@
 
 {{!-- ************** Member section ******************** --}}
 <div class="member-container">
+  {{!-- Picture and Name --}}
   {{#each members}}
   <div class="member-each-container">
     <div class="member-title-container">
@@ -33,16 +42,21 @@
         <h4>{{name}}</h4>
       </a>
     </div>
-
-
-    {{!-- Update --}}
-    <a href="/Member/update/{{_id}}">
-      <button>Update {{name}}'s Info</button>
-    </a>
-    {{!-- Delete --}}
-    <form action="/member/{{_id}}?_method=DELETE" method="POST">
-      <input type="image" src="../../public/images/delete-icon.jpeg" alt="Delete Form" />
-    </form>
+    {{!-- Member Options --}}
+    <div class="member-options-container">
+      {{!-- Update --}}
+      <a href="/Member/update/{{_id}}">
+        <button>Update {{name}}'s Info</button>
+      </a>
+      {{!-- Delete --}}
+      <form action="/member/{{_id}}?_method=DELETE" method="POST">
+        <input type="submit" value="Delete" />
+      </form>
+      {{!-- ADD CHORE --}}
+      <a href="/chore/create?memberId={{_id}}">
+        <button>Add Chore</button>
+      </a>
+    </div>
 
     {{!-- ######## CHORE LIST FOR EACH MEMBER #########--}}
     <ul class="chores-container">
@@ -54,6 +68,12 @@
         <form action="/chore/udate/completed/{{_id}}?_method=PUT" method="POST">
           <input type="submit" class="check-box" value="done?">
         </form>
+        <form action="/chore/{{_id}}?_method=DELETE" method="POST">
+          <input type="submit" value="delete">
+        </form>
+        <a href="/chore/update/{{_id}}">
+          <button>Update</button>
+        </a>
         <li class="chore">{{chore}}</li>
       </div>
       {{/if}}

@@ -12,13 +12,14 @@ ChoreRouter.get('/', (req, res) => {
     })
 })
 //create
-ChoreRouter.get('/create/:memberId', (req, res) => {
-  res.render('chore/createChore', { memberId: req.params.memberId })
+ChoreRouter.get('/create', (req, res) => {
+  res.render('chore/createChore', { memberId: req.query.memberId })
 })
-ChoreRouter.post('/:memberId', (req, res) => {
+ChoreRouter.post('/', async (req, res) => {
+  const member = await MemberApi.getOneMember(req.query.memberId)
   ChoreApi.createChore(req.body)
     .then(() => {
-      return res.redirect(`/member/${req.params.memberId}`)
+      return res.redirect(`/wheel/${member.wheelId}`)
     })
 })
 //mark chore as done
@@ -35,18 +36,18 @@ ChoreRouter.get('/update/:id', (req, res) => {
       res.render('chore/updateChore', { selectedChore })
     })
 })
-ChoreRouter.put('/:id', (req, res) => {
-  ChoreApi.updateChore(req.params.id, req.body)
-    .then(() => {
-      return res.redirect(`/chore/${req.params.id}`)
-    })
+ChoreRouter.put('/:id', async (req, res) => {
+  const chore = await ChoreApi.getOneChore(req.params.id)
+  const member = await MemberApi.getOneMember(chore.memberId)
+  await ChoreApi.updateChore(req.params.id, req.body)
+  return res.redirect(`/wheel/${member.wheelId}`)
 })
 //delete
 ChoreRouter.delete('/:id', async (req, res) => {
   const selectedChore = await ChoreApi.getOneChore(req.params.id)
-  const memberId = selectedChore.memberId
+  const member = await MemberApi.getOneMember(selectedChore.memberId)
   await ChoreApi.deleteChore(req.params.id)
-  return res.redirect(`/member/${memberId}`)
+  return res.redirect(`/wheel/${member.wheelId}`)
 
   // ChoreApi.getOneChore(req.params.id)
   //   .then((selectedChore) => {

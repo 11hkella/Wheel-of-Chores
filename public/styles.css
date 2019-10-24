@@ -7,6 +7,10 @@ header{
   border-bottom: 1px solid #00000038;
 }
 
+a{
+  text-decoration: none;
+}
+
 h1{
   font-size: 3em;
   padding: 7px;
@@ -40,6 +44,9 @@ h1{
 .member-pic-sm{
   width: 100px;
 }
+.member-options-container{
+  border-bottom: 1px dashed gray;
+}
 .create-member-container{
   display: flex;
   justify-content: center;
@@ -64,4 +71,23 @@ h1{
   justify-content: space-around;
   align-items: center;
   width: 100vw;
+}
+
+/* HOME PAGE LINK */
+.home-button-container{
+  position: relative;
+  left: 18px;
+  bottom: -20px;
+  display: inline-block;
+}
+.home-button{
+  font-family: 'Poiret One', cursive;
+  font-size: 2em;
+  line-height: 24px;
+}
+.chores-home-button{
+  font-size: 43px;
+}
+.span-home-button{
+  font-size: 20px;;
 }

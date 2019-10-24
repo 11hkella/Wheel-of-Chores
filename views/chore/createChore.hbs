@@ -1,6 +1,14 @@
+<div class="home-button-container">
+  <a href="/member/{{memberId}}">
+    <p class="home-button">WHEEL <span class="span-home-button">of</span>
+      <br />
+      <span class="chores-home-button">CHORES</span></p>
+  </a>
+</div>
+
 <h1>Create a New Chore</h1>
 
-<form action="/chore/{{memberId}}" method="POST">
+<form action="/chore/?memberId={{memberId}}" method="POST">
   <input type="text" name="chore" placeholder="chore" />
   <input type="Number" name="frequency" placeholder="frequency in days" />
   <input type="boolean" name="completed" placeholder="completed? true/false" value="false" />
