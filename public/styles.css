@@ -11,7 +11,7 @@ body{
 }
 header{
   background-color: #fac20b;
-  padding-bottom: 167px;
+  padding-bottom: 124px;
 }
 main{
   position: relative;
@@ -102,6 +102,8 @@ form{
 .member-container{
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+
 }
 .member-each-container{
   background-color: rgba(78, 1, 150, 0.253);
@@ -152,8 +154,9 @@ form{
 }
 .create-member-container{
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   margin: 10px auto;
+  padding: 0 40px;
 }
 .chore-item-container{
   display: flex;

@@ -26,6 +26,13 @@
       </form>
     </div>
   </div>
+
+
+  {{!-- Create member --}}
+  <div class="create-member-container">
+    <a href="/member/create/{{selectedWheel._id}}">
+      <h2>+Member</h2>
+    </a>
 </header>
 
 {{!-- ************** Member section ******************** --}}
@@ -93,9 +100,4 @@
   {{/each}}
 </div>
 
-{{!-- Create member --}}
-<div class="create-member-container">
-  <a href="/member/create/{{selectedWheel._id}}">
-    <button>Add Member</button>
-  </a>
 </div>
