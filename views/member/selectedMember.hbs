@@ -19,7 +19,7 @@
     </a>
 
     <form action="/member/{{selectedMember._id}}?_method=DELETE" method="POST">
-      <input type="image" src="/images/delete-icon.jpeg" alt="Submit">
+      <input class="delete" type="image" src="/images/delete-icon.jpeg" alt="Submit">
     </form>
 
     <a href="/wheel/{{selectedMember.wheelId}}">
@@ -45,12 +45,12 @@
   </a>
   {{!-- Delete Chore --}}
   <form action="/chore/{{_id}}?_method=DELETE" method="POST">
-    <input type="submit" value="Delete this chore">
+    <input class="delete" type="submit" value="Delete this chore">
   </form>
   {{/each}}
   <br />
   {{!-- Create Chore --}}
-  <a href="/chore/create/{{selectedMember._id}}">
+  <a href="/chore/create?memberId={{selectedMember._id}}">
     <button>Add Chore</button>
   </a>
 </main>
