@@ -117,6 +117,12 @@ button, .delete{
   margin: 2px;
   border: 1px solid rgb(3, 3, 3);
 }
+button:hover{
+  background-color: #fac20b;
+}
+.delete:hover{
+  background-color: #fac20b;
+}
 
 /* WHEEL SELECT SCREEN  */
 .wheel-select-container{
@@ -136,6 +142,9 @@ button, .delete{
   padding: 13px;
 
 }
+.wheel-select:hover{
+  background-color: #fac20b;
+}
 .wheel-image-conatiner{
   width: 187px;
   height: 187px;
@@ -153,9 +162,7 @@ button, .delete{
   text-transform: uppercase;
   color: rgb(253, 253, 253);
 }
-.wheel-options-container{
 
-}
 
 .member-container{
   display: flex;
