@@ -12,13 +12,15 @@
   </div>
 </header>
 
-<form action="/member/{{wheelId}}" method="POST" class="create-member-form">
+<main>
+  <form action="/member/{{wheelId}}" method="POST" class="create-member-form">
 
-  <div class="create-member-inputs-containter">
-    <input type="text" name="name" placeholder="name" />
-    <input type="text" name="picture" placeholder="picture URL" />
-  </div>
+    <div class="create-member-inputs-containter">
+      <input type="text" name="name" placeholder="name" />
+      <input type="text" name="picture" placeholder="picture URL" />
+    </div>
 
-  <input type="text" name="wheelId" placeholder="choreId" value="{{wheelId}}" style="display:none;" />
-  <input type="submit" value="Create" />
-</form>
+    <input type="text" name="wheelId" placeholder="choreId" value="{{wheelId}}" style="display:none;" />
+    <input type="submit" value="Create" />
+  </form>
+</main>

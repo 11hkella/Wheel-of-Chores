@@ -12,8 +12,10 @@
   </div>
 </header>
 
-<form action="/member/{{selectedMember._id}}?_method=PUT" method="POST">
-  <input type="text" name="name" placeholder="name" value="{{selectedMember.name}}" />
-  <input type="text" name="picture" placeholder="picture" value="{{selectedMember.picture}}" />
-  <input type="submit" value="Update" />
-</form>
+<main>
+  <form action="/member/{{selectedMember._id}}?_method=PUT" method="POST">
+    <input type="text" name="name" placeholder="name" value="{{selectedMember.name}}" />
+    <input type="text" name="picture" placeholder="picture" value="{{selectedMember.picture}}" />
+    <input type="submit" value="Update" />
+  </form>
+</main>
